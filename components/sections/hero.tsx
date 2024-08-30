@@ -8,11 +8,10 @@ interface HeroSectionProps {
 	subtitle: string;
 	avatarUrl: string;
 	isVerified: boolean;
-	primaryButton?: ButtonType;
-	secondaryButton?: ButtonType;
+	buttons: ButtonType[] | null;
 }
 
-export function HeroSection({ title, subtitle, avatarUrl, isVerified, primaryButton, secondaryButton }: HeroSectionProps) {
+export function HeroSection({ title, subtitle, avatarUrl, isVerified, buttons }: HeroSectionProps) {
 	const borderRadius = isVerified ? "rounded-2xl" : "rounded-full";
 
 	return (
@@ -30,16 +29,16 @@ export function HeroSection({ title, subtitle, avatarUrl, isVerified, primaryBut
 					<p className="text-bases text-muted-foreground">{subtitle}</p>
 				</div>
 
-				{(primaryButton || secondaryButton) && (
+				{buttons && buttons.length > 0 && (
 					<div className="flex gap-2 mt-4">
-						{primaryButton && (
-							<Link className={buttonVariants({ variant: "default" })} href={primaryButton.url}>
-								{primaryButton.label}
+						{buttons[0] && (
+							<Link className={buttonVariants({ variant: "default" })} href={buttons[0].url}>
+								{buttons[0].label}
 							</Link>
 						)}
-						{secondaryButton && (
-							<Link className={buttonVariants({ variant: "outline" })} href={secondaryButton.url}>
-								{secondaryButton.label}
+						{buttons[1] && (
+							<Link className={buttonVariants({ variant: "outline" })} href={buttons[1].url}>
+								{buttons[1].label}
 							</Link>
 						)}
 					</div>

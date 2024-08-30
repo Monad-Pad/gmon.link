@@ -5,10 +5,14 @@ import { ArrowUpRight, Plus, Settings, User } from "lucide-react";
 import { Icons } from "@/lib/types/icons";
 
 interface LinksSectionProps {
-	links: LinkType[];
+	links: LinkType[] | [] | null;
 }
 
 export function LinksSection({ links }: LinksSectionProps) {
+	if (!links) {
+		return null;
+	}
+
 	return (
 		<section className="mx-auto max-w-md w-full p-4">
 			<p className="text-sm mb-2 font-semibold">Links</p>
@@ -20,6 +24,8 @@ export function LinksSection({ links }: LinksSectionProps) {
 						<Link
 							key={idx}
 							href={link.url}
+							target="_blank"
+							rel="noopener noreferrer"
 							className={`relative px-6 py-4 shadow rounded-xl flex flex-row gap-4 border ${
 								idx === 0 ? "bg-primary text-primary-foreground border-card outline outline-foreground/30 outline-1" : "bg-card"
 							} ${link.description ? "" : "items-center"}`}

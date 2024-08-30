@@ -1,3 +1,5 @@
+import { LinkType } from "./links";
+import { ButtonType } from "./sections";
 import { UserType } from "./user";
 
 export type ProjectType = {
@@ -9,4 +11,7 @@ export type ProjectType = {
     avatar_url: string;
     is_verified: boolean;
     created_at: string;
+    description: string;
+    buttons: ButtonType[] | [];
+    links: LinkType[] | [] | null;
 }

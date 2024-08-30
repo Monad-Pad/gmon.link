@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/sections/hero";
 import { LinksSection } from "@/components/sections/links";
 import { LinkType } from "@/lib/types/links";
+import { ButtonType } from "@/lib/types/sections";
 
 const links: LinkType[] = [
 	{
@@ -29,6 +30,11 @@ const links: LinkType[] = [
 	},
 ];
 
+const buttons: ButtonType[] = [
+	{ label: "Website", url: "#" },
+	{ label: "Whitepaper", url: "#" },
+];
+
 export default function DemoPage() {
 	return (
 		<main className="bg-background">
@@ -37,8 +43,7 @@ export default function DemoPage() {
 				subtitle="Leading the way as the first launchpad on Monad."
 				avatarUrl="https://api.monadpad.com/storage/v1/object/public/gmon.link/monadpad.png"
 				isVerified={false}
-				primaryButton={{ label: "Website", url: "#" }}
-				secondaryButton={{ label: "Whitepaper", url: "#" }}
+				buttons={buttons}
 			/>
 			<LinksSection links={links} />
 		</main>
