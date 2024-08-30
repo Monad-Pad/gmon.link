@@ -9,7 +9,6 @@ export const dynamic = 'force-dynamic';
 
 export const generateMetadata = async ({ params }: { params: { project: string } }) => {
 	const project = await getProjectBySlug(params.project);
-	console.log(project);
 
 	if (!project) {
 		return notFound();
