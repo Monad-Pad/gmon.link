@@ -29,7 +29,7 @@ export default function Home() {
 						<div className="space-y-2">
 							<h1 className="text-4xl sm:text-5xl font-bold">gmon.link</h1>
 							<p className="text-lg sm:text-xl text-muted-foreground">
-								gmon.link is the easiest and quickest way to aggregate links for projects or individual.
+								gmon.link is the easiest and quickest way to aggregate links for projects or individuals.
 							</p>
 						</div>
             <div className="flex flex-col gap-3">
