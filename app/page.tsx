@@ -21,7 +21,7 @@ const features = [
 
 export default function Home() {
 	return (
-		<main className="">
+		<main className="bg-background">
 			<section className="py-16 flex items-center justify-center min-h-screen sm:min-h-0">
 				<div className="max-w-screen-xl px-6 sm:px-8 w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
 					<div className="flex flex-col gap-8 items-start justify-center max-w-md">
@@ -35,7 +35,7 @@ export default function Home() {
             <div className="flex flex-col gap-3">
               {features.map((feature) => (
                 <div key={feature.title} className="flex flex-row gap-3">
-                  <feature.icon className="w-6 h-6 text-primary-foreground/90" />
+                  <feature.icon className="w-6 h-6 text-primary dark:text-primary-foreground" />
                   <p className="text-lg text-muted-foreground">{feature.title}</p>
                 </div>
               ))}
