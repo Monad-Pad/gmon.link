@@ -30,8 +30,8 @@ export function LinksSection({ links }: LinksSectionProps) {
 								href={link.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								className={`relative px-6 py-4 shadow rounded-xl flex flex-row gap-4 border ${
-									idx === 0 ? "bg-primary text-primary-foreground border-card outline outline-foreground/30 outline-1" : "bg-card"
+								className={`relative px-6 py-4 shadow rounded-xl flex flex-row gap-4 border transition-all duration-150 ease-in-out ${
+									idx === 0 ? "bg-primary text-primary-foreground border-card outline outline-foreground/30 outline-1 hover:bg-primary/90" : "bg-card hover:bg-muted"
 								} ${link.description ? "" : "items-center"}`}
 							>
 								{IconComponent && (

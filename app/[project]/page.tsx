@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/sections/hero";
 import { LinksSection } from "@/components/sections/links";
+import { MadeWithSection } from "@/components/sections/made-with";
 import { getProjectBySlug } from "@/lib/project/get-project";
 import { ButtonType } from "@/lib/types/sections";
 import { notFound } from "next/navigation";
@@ -39,6 +40,7 @@ export default async function ProjectPage( { params }: { params: { project: stri
 				buttons={project.buttons}
 			/>
 			<LinksSection links={links} />
+			{!project.is_verified && <MadeWithSection />}
 		</main>
 	);
 }

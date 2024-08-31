@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button, buttonVariants } from "../ui/button";
 import { ButtonType } from "@/lib/types/sections";
 import Link from "next/link";
+import { VerifiedBadge } from "../ui/verified-badge";
 
 interface HeroSectionProps {
 	title: string;
@@ -17,6 +18,7 @@ export function HeroSection({ title, subtitle, avatarUrl, isVerified, buttons }:
 	return (
 		<section className="mx-auto max-w-md w-full p-4">
 			<div className="w-full flex flex-col items-center gap-4 px-6 py-8 border shadow rounded-xl bg-card">
+				
 				<Image
 					src={avatarUrl}
 					alt={title}
@@ -24,8 +26,13 @@ export function HeroSection({ title, subtitle, avatarUrl, isVerified, buttons }:
 					height={200}
 					className={`size-24 outline outline-2 outline-border border-2 border-card ${borderRadius}`}
 				/>
+				
+
 				<div className="space-y-1 text-center">
+					<div className="flex items-center justify-center gap-2">
 					<h1 className="text-2xl font-bold text-foreground">{title}</h1>
+						{isVerified && <VerifiedBadge />}</div>
+					
 					<p className="text-bases text-muted-foreground">{subtitle}</p>
 				</div>
 
