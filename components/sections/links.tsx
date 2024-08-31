@@ -10,7 +10,7 @@ interface LinksSectionProps {
 
 export function LinksSection({ links }: LinksSectionProps) {
 	return (
-		<section className="mx-auto max-w-md w-full p-4">
+		<section className="mx-auto max-w-md w-full p-4 md:pb-4 pb-20">
 			<p className="text-sm mb-2 font-semibold">Links</p>
 			<div className="w-full flex flex-col gap-4">
 				{!links || links?.length === 0 ? (
