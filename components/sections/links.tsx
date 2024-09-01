@@ -29,8 +29,9 @@ export function LinksSection({ links }: LinksSectionProps) {
 					categories.map((category) => (
 						<div key={category}>
 							<h2 className="text-sm mb-2 font-semibold">{category === "none" ? "Links" :category.charAt(0).toUpperCase() + category.slice(1)}</h2>
-							{links
-								.filter((link) => link.category === category)
+							<div className="flex flex-col gap-4">	
+								{links
+									.filter((link) => link.category === category)
 								.map((link, idx) => {
 									const IconComponent = link.icon ? Icons[link.icon.icon] : null;
 
@@ -76,6 +77,7 @@ export function LinksSection({ links }: LinksSectionProps) {
 										</Link>
 									);
 								})}
+							</div>
 						</div>
 					))
 				)}
