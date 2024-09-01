@@ -6,7 +6,7 @@ export async function getProjectBySlug(slug: string) {
 		.from("projects")
 		.select(`*, links(*)`)
 		.eq("slug", slug)
-		.order("order", { referencedTable: "links", ascending: false })
+		.order("order", { referencedTable: "links", ascending: true })
 		.order("created_at", { referencedTable: "links",ascending: false })
 		.maybeSingle();
 
