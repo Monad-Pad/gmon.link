@@ -40,7 +40,7 @@ export default async function ProjectPage( { params }: { params: { project: stri
 				buttons={project.buttons}
 			/>
 			<LinksSection links={links} />
-			{!project.is_verified && <MadeWithSection />}
+			<MadeWithSection />
 		</main>
 	);
 }
