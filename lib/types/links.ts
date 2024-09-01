@@ -7,5 +7,6 @@ export type LinkType = {
     title: string;
     description: string | null;
     icon: IconType | null;
+    category: string;
     created_at: string;
 }
