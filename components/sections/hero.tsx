@@ -20,6 +20,8 @@ export function HeroSection({ title, subtitle, avatarUrl, isVerified, buttons }:
 			<div className="w-full flex flex-col items-center gap-4 px-6 py-8 border shadow rounded-xl bg-card">
 				
 				<Image
+					unoptimized
+					loading="eager"
 					src={avatarUrl}
 					alt={title}
 					width={200}
