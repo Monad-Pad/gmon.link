@@ -16,7 +16,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={GeistSans.className}>
 			<body>
-				<ThemeProvider attribute="class" defaultTheme="dark">
+				<ThemeProvider attribute="class" defaultTheme="system">
 					{children}
 				</ThemeProvider>
 			</body>

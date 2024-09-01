@@ -30,6 +30,9 @@ const config = {
         "5xl": ["3rem", { letterSpacing: "-2%"}],
         "6xl": ["4rem", { letterSpacing: "-2%"}],
       },
+      backgroundImage: {
+        "main-bg": "url('/assets/bg.webp')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
