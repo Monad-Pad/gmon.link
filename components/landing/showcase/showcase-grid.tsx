@@ -12,6 +12,10 @@ import { ArrowUpRight, CheckCircle } from "lucide-react";
 export default async function ShowcaseGrid() {
 	const showcase = await getVerifiedProjects();
 
+    if (!showcase) return (
+        <ShowcaseSkeletonGrid />
+    )
+
 	return (
 		<Suspense fallback={<ShowcaseSkeletonGrid />}>
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

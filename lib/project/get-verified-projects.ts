@@ -12,6 +12,8 @@ export const getVerifiedProjects = async () => {
     const response = await fetch(`${PLATFORM_URL}/api/projects/verified`);
     const { data } = await response.json();
 
+    if (!response.ok) return;
+
     return data as VerifiedProject[];
 
     // return data.map((project: VerifiedProject) => ({
