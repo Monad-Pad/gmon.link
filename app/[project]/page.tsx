@@ -3,6 +3,7 @@ import { LinksSection } from "@/components/sections/links";
 import { MadeWithSection } from "@/components/sections/made-with";
 import { getProjectBySlug } from "@/lib/project/get-project";
 import { ButtonType } from "@/lib/types/sections";
+import { IMAGE_BASE_URL } from "@/lib/utils";
 import { notFound } from "next/navigation";
 
 export const revalidate = 0;
@@ -35,7 +36,7 @@ export default async function ProjectPage( { params }: { params: { project: stri
 			<HeroSection
 				title={project.title}
 				subtitle={project.description}
-				avatarUrl={`https://api.monadpad.com/storage/v1/object/public/${project.avatar_url}`}
+				avatarUrl={`${IMAGE_BASE_URL}${project.avatar_url}`}
 				isVerified={project.is_verified}
 				buttons={project.buttons}
 			/>

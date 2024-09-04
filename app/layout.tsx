@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { ModeToggle } from "@/components/ui/theme-switcher";
 
 export const metadata: Metadata = {
 	title: "gmon.link - create your own mini landing page",
@@ -15,8 +16,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={GeistSans.className}>
-			<body>
+			<body className="relative">
 				<ThemeProvider attribute="class" defaultTheme="system">
+					<div className="fixed top-4 right-4">
+						<ModeToggle />
+					</div>
 					{children}
 				</ThemeProvider>
 			</body>
