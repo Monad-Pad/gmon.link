@@ -10,9 +10,10 @@ export interface VerifiedProject {
 
 export const getVerifiedProjects = async () => {
     const response = await fetch(`${PLATFORM_URL}/api/projects/verified`);
-    const { data } = await response.json();
 
     if (!response.ok) return;
+
+    const { data } = await response.json();
 
     return data as VerifiedProject[];
 
