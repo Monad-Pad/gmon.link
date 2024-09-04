@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { buttonVariants } from "@/components/ui/button";
@@ -7,7 +6,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 export default function LoginPage() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -61,8 +60,9 @@ export default function LoginPage() {
 
 	return (
 		<main>
-			<section className="min-h-screen max-h-screen h-full w-full flex flex-row justify-center items-center px-6">
-				<div className="min-h-[400px] max-w-lg w-full bg-card rounded-xl border shadow px-6 py-8 md:px-8 md:py-12 text-center flex flex-col gap-8 items-center justify-center">
+			<Suspense fallback={<div>Loading...</div>}>
+				<section className="min-h-screen max-h-screen h-full w-full flex flex-row justify-center items-center px-6">
+					<div className="min-h-[400px] max-w-lg w-full bg-card rounded-xl border shadow px-6 py-8 md:px-8 md:py-12 text-center flex flex-col gap-8 items-center justify-center">
 					<Image src="/assets/gmon.png" alt="gmon.link" width={100} height={100} className="md:size-24 size-16" />
 					<div className="flex flex-col gap-2">
 						<h1 className="text-2xl font-bold">Login to gmon.link</h1>
@@ -88,9 +88,10 @@ export default function LoginPage() {
 						) : (
 							<p className="text-muted-foreground">No projects found</p>
 						)}
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</Suspense>
 		</main>
 	);
 }
