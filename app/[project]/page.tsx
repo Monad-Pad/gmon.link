@@ -1,3 +1,4 @@
+import ActionBar from "@/components/sections/action-bar";
 import { HeroSection } from "@/components/sections/hero";
 import { LinksSection } from "@/components/sections/links";
 import { MadeWithSection } from "@/components/sections/made-with";
@@ -41,7 +42,8 @@ export default async function ProjectPage( { params }: { params: { project: stri
 				buttons={project.buttons}
 			/>
 			<LinksSection links={links} />
-			<MadeWithSection />
+			{/* <MadeWithSection /> */}
+			<ActionBar project={project} />
 		</main>
 	);
 }

@@ -6,7 +6,7 @@ import { features } from "@/lib/info/features";
 
 export default function HeroSection() {
     return (
-        <section className="py-16 flex items-center justify-center min-h-screen sm:min-h-0">
+        <section className="py-16 flex items-center justify-center sm:min-h-0">
 				<div className="max-w-screen-xl px-6 sm:px-8 w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
 					<div className="flex flex-col gap-8 items-start justify-center max-w-md">
 						<Image src="/assets/gmon.png" alt="gmon-logo" width={100} height={100} className="w-16 h-16" />

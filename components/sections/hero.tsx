@@ -26,7 +26,7 @@ export function HeroSection({ title, subtitle, avatarUrl, isVerified, buttons }:
 						<h1 className="text-2xl font-bold text-foreground">{title}</h1>
 						{isVerified && <VerifiedBadge />}
 					</div>
-					<p className="text-bases text-muted-foreground">{subtitle}</p>
+					<p className="text-base text-muted-foreground">{subtitle}</p>
 				</div>
 				{buttons && buttons.length > 0 && (
 					<div className="flex gap-2 mt-4">

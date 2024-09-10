@@ -1,13 +1,23 @@
-import { getVerifiedProjects } from "@/lib/project/get-verified-projects";
-import { Suspense } from "react";
+"use client";
+
+import { getVerifiedProjects, VerifiedProject } from "@/lib/project/get-verified-projects";
+import { Suspense, useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { IMAGE_BASE_URL } from "@/lib/utils";
 import ProfileImage from "@/components/ui/profile-image";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 
-export default async function ShowcaseGrid() {
-	const showcase = await getVerifiedProjects();
+export default function ShowcaseGrid() {
+	const [showcase, setShowcase] = useState<VerifiedProject[]>([]);
+
+	useEffect(() => {
+		async function fetchShowcase() {
+			const showcase = await getVerifiedProjects();
+			setShowcase(showcase || []);
+		}
+		fetchShowcase();
+	}, []);
 
 	return (
 		<Suspense fallback={<ShowcaseSkeletonGrid />}>

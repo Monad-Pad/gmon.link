@@ -19,10 +19,10 @@ const config = {
     },
     extend: {
       fontSize: {
-        "xs": ["0.75rem", { letterSpacing: "-1%"}],
-        "sm": ["0.875rem", { letterSpacing: "-1%"}],
-        "base": ["1rem", { letterSpacing: "-1%"}],
-        "lg": ["1.125rem", { letterSpacing: "-1%"}],
+        "xs": ["0.75rem", { letterSpacing: "-1%", fontWeight: 500}],
+        "sm": ["0.875rem", { letterSpacing: "-1%", fontWeight: 500}],
+        "base": ["1rem", { letterSpacing: "-1%", fontWeight: 500}],
+        "lg": ["1.125rem", { letterSpacing: "-1%", fontWeight: 500}],
         "xl": ["1.25rem", { letterSpacing: "-2%"}],
         "2xl": ["1.5rem", { letterSpacing: "-2%"}],
         "3xl": ["1.875rem", { letterSpacing: "-2%"}],

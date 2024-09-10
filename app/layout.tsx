@@ -15,12 +15,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={GeistSans.className}>
+		<html lang="en">
 			<body className="relative">
 				<ThemeProvider attribute="class" defaultTheme="system">
-					<div className="fixed top-4 right-4">
-						<ModeToggle />
-					</div>
 					{children}
 				</ThemeProvider>
 			</body>

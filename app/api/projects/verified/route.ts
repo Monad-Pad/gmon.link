@@ -1,9 +1,10 @@
 import { supabaseApiClient } from "@/lib/clients/supabase";
 import { NextResponse } from "next/server";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
-    const { data, error } = await supabaseApiClient.from("projects").select("title, slug, description, avatar_url, created_at").eq("is_verified", true).order("created_at", { ascending: false }).limit(9);
-    console.log(data);
+    const { data, error } = await supabaseApiClient.from("projects").select("title, slug, description, avatar_url").eq("is_verified", true).order("created_at", { ascending: false }).limit(9);
 
     if (error) {
         console.error(error);
