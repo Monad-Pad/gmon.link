@@ -79,7 +79,7 @@ export default function QrCodePopover({ project }: { project: ProjectType }) {
 					<QrCode />
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent className="space-y-3 w-[350px] rounded-xl">
+			<PopoverContent className="space-y-3 max-w-sm w-full rounded-xl">
 				<div className="grid gap-4">
 					{qrCode ? (
 						<div>
@@ -99,7 +99,7 @@ export default function QrCodePopover({ project }: { project: ProjectType }) {
 									<div className="aspect-square relative">
 										<Image src={URL.createObjectURL(qrCode)} alt="QR Code" layout="fill" objectFit="contain" />
 									</div>
-									<p className="text-sm uppercase text-primary text-center font-bold mt-3">gmon.link/{project.slug}</p>
+									<p className="text-xs uppercase tracking-wide text-primary text-center font-bold mt-3">gmon.link/{project.slug}</p>
 								</div>
 							</div>
 							</div>
