@@ -83,11 +83,14 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_KEY=
 JWT_SECRET=
 NEXT_PUBLIC_ENVIRONMENT=
+GITHUB_TOKEN=
 ```
 
-All these except the `NEXT_PUBLIC_ENVIRONMENT` can be found in the `Project Settings` -> `API` section of your Supabase project.
+All these except the `NEXT_PUBLIC_ENVIRONMENT` & `GITHUB_TOKEN` can be found in the `Project Settings` -> `API` section of your Supabase project.
 
 The `NEXT_PUBLIC_ENVIRONMENT` is used to determine the environment of the application, you can set it to `development` while locally developing, and `production` when you want to deploy the application. In `/lib/utils.ts` you can see exactly what this does.
+
+You can leave the `GITHUB_TOKEN` as it is, this is used to fetch contributors on the `Made with ❤️ by` section of the landing page.
 
 ### 2.3. Change the database schema
 The production version of gmon.link is using a different schema than the local version, this is because the production version is hosted by Monad Pad and we are using a different Supabase project for it.

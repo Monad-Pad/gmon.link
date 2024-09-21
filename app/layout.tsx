@@ -5,8 +5,8 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import { ModeToggle } from "@/components/ui/theme-switcher";
 
 export const metadata: Metadata = {
-	title: "gmon.link - create your own mini landing page",
-	description: "gmon.link is a free tool to create your own mini landing page. powered by Telegram, built by Monad Pad.",
+	title: "gmon.link - a link in bio for nads",
+	description: "gmon.link is an open-source & free tool to create your link in bio page. Powered by Telegram, built by Monad Pad & contributors.",
 };
 
 export default function RootLayout({

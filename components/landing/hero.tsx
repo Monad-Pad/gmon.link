@@ -3,8 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
 import { features } from "@/lib/info/features";
+import ContributorCycle, { Contributor } from "../ui/contributors";
 
-export default function HeroSection() {
+export default function HeroSection({ contributors }: { contributors: Contributor[] }) {
     return (
         <section className="py-16 flex items-center justify-center sm:min-h-0">
 				<div className="max-w-screen-xl px-6 sm:px-8 w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -33,13 +34,18 @@ export default function HeroSection() {
 									View example <ArrowRightIcon className="w-4 h-4 ml-2" />
 								</Link>
 							</div>
-							<p className="text-sm text-muted-foreground mt-2">
+							<div className="mt-2 flex items-center justify-center gap-1">
+							<p className="text-sm text-muted-foreground">
 								*Completely free to use, built by{" "}
-								<Link href="https://monadpad.xyz" target="_blank" className="underline">
-									Monad Pad
-								</Link>
-								.
 							</p>
+							<div className="flex -space-x-1.5">
+							<Link href="https://monadpad.xyz" target="_blank" className="">
+									<Image src="/assets/monadpad-logo.png" alt="monadpad-logo" width={20} height={20} className="rounded-full border" />
+								</Link>
+								<ContributorCycle contributors={contributors} size={20} />
+							</div>
+							<p className="text-sm text-muted-foreground">+ {contributors.length - 1 <= 0 ? "" : contributors.length - 1} more contributors</p>
+							</div>
 						</div>
 					</div>
 					<div className="hidden sm:block">
