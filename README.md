@@ -89,7 +89,12 @@ All these except the `NEXT_PUBLIC_ENVIRONMENT` can be found in the `Project Sett
 
 The `NEXT_PUBLIC_ENVIRONMENT` is used to determine the environment of the application, you can set it to `development` while locally developing, and `production` when you want to deploy the application. In `/lib/utils.ts` you can see exactly what this does.
 
-### 2.3. Run the application
+### 2.3. Change the database schema
+The production version of gmon.link is using a different schema than the local version, this is because the production version is hosted by Monad Pad and we are using a different Supabase project for it.
+
+To change the schema to public (default), you need to set the `useSchema` variable to `false` in `/lib/clients/supabase.ts`.
+
+### 2.4. Run the application
 To run the application, run the following command:
 ```bash
 npm run dev
