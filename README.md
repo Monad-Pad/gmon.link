@@ -2,6 +2,9 @@
 ![gmon.link introduction banner](/public/assets/gmon-introduction.png)
 A linktree/linkinbio alternative that is powered by Telegram. It is written in Next.js, PostgresSQL database from Supabase, UI made with TailwindCSS, ShadCN UI & Radix UI
 
+## Help build gmon.link
+gmon.link is a community-run project initially started by the team behind Monad Pad. If you have any suggestions, ideas, or want to help build and show your skills to the Monad ecosystem, please open an issue or a pull request 💜
+
 # Setting it up locally
 To setup the front-end of gmon.link locally to for example; help contribute to the platform or play around with it. You need to follow the following steps:
 
