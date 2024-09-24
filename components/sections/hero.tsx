@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { Button, buttonVariants } from "../ui/button";
-import { ButtonType } from "@/lib/types/sections";
-import Link from "next/link";
-import { VerifiedBadge } from "../ui/verified-badge";
-import ProfileImage from "../ui/profile-image";
-import { IMAGE_BASE_URL } from "@/lib/utils";
+import Link from 'next/link';
+
+import { ButtonType } from '@/lib/types/sections';
+
+import { buttonVariants } from '../ui/button';
+import ProfileImage from '../ui/profile-image';
+import { VerifiedBadge } from '../ui/verified-badge';
 
 interface HeroSectionProps {
 	title: string;
@@ -33,11 +33,15 @@ export function HeroSection({ title, subtitle, avatarUrl, isVerified, buttons }:
 						{buttons[0] && (
 							<Link className={buttonVariants({ variant: "default" })} href={buttons[0].url}>
 								{buttons[0].label}
+								target="_blank" 
+								rel="noopener noreferrer"
 							</Link>
 						)}
 						{buttons[1] && (
 							<Link className={buttonVariants({ variant: "outline" })} href={buttons[1].url}>
 								{buttons[1].label}
+								target="_blank"
+								rel="noopener noreferrer"
 							</Link>
 						)}
 					</div>
