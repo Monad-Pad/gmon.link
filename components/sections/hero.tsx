@@ -31,17 +31,13 @@ export function HeroSection({ title, subtitle, avatarUrl, isVerified, buttons }:
 				{buttons && buttons.length > 0 && (
 					<div className="flex gap-2 mt-4">
 						{buttons[0] && (
-							<Link className={buttonVariants({ variant: "default" })} href={buttons[0].url}>
+							<Link target="_blank" rel="noopener noreferrer" className={buttonVariants({ variant: "default" })} href={buttons[0].url}>
 								{buttons[0].label}
-								target="_blank" 
-								rel="noopener noreferrer"
 							</Link>
 						)}
 						{buttons[1] && (
-							<Link className={buttonVariants({ variant: "outline" })} href={buttons[1].url}>
+							<Link target="_blank" rel="noopener noreferrer" className={buttonVariants({ variant: "outline" })} href={buttons[1].url}>
 								{buttons[1].label}
-								target="_blank"
-								rel="noopener noreferrer"
 							</Link>
 						)}
 					</div>
