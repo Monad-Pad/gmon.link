@@ -1,8 +1,10 @@
-import { buttonVariants } from "../ui/button";
+import Image from "next/image";
+import { Button, buttonVariants } from "../ui/button";
 import { ButtonType } from "@/lib/types/sections";
 import Link from "next/link";
 import { VerifiedBadge } from "../ui/verified-badge";
 import ProfileImage from "../ui/profile-image";
+import { IMAGE_BASE_URL } from "@/lib/utils";
 
 interface HeroSectionProps {
 	title: string;
