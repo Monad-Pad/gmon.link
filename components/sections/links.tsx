@@ -14,7 +14,7 @@ export function LinksSection({ links }: LinksSectionProps) {
 
 	return (
 		<section className="mx-auto max-w-md w-full p-4 md:pb-4 pb-20">
-			<div className="w-full flex flex-col gap-8">
+			<div className="w-full flex flex-col gap-8 mb-10">
 				{!links || links?.length === 0 ? (
 					<div className="w-full px-6 py-4 shadow rounded-xl border">
 						<h3 className="text-lg font-semibold">No links found</h3>
