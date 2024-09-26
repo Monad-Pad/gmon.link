@@ -4,7 +4,7 @@ import Results from '../../components/projects/results';
 import { SearchBar } from '../../components/ui/search-bar';
 
 export default function ProjectsPage() {
-  const [value, setValue] = useState('');
+  const [query, setQuery] = useState('');
   const [tags, setTags] = useState<string[]>();
 
   return (
@@ -15,13 +15,13 @@ export default function ProjectsPage() {
             <h2 className="text-3xl font-bold mb-5">Projects</h2>
             <SearchBar
               onSubmit={({ value, tags }) => {
-                setValue(value);
+                setQuery(value);
                 setTags(tags);
               }}
               tags={['dex', 'launchpad', 'personality']}
             />
           </div>
-          <Results value={value} tags={tags} />
+          <Results query={query} tags={tags} />
         </div>
       </section>
     </main>

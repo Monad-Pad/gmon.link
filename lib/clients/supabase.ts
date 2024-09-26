@@ -4,4 +4,4 @@ const useSchema = false; // This is set to true as on the production version (ho
 
 export const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, { db: { schema: useSchema ? "gmonlink" : undefined } });
 
-export const supabaseApiClient = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_KEY!, { db: { schema: useSchema ? "gmonlink" : undefined } });
+export const supabaseApiClient = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_SERVICE_KEY!, { db: { schema: useSchema ? "gmonlink" : undefined } });
