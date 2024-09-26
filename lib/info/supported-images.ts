@@ -28,4 +28,12 @@ export const supportedImages: SupportedImage[] = [
         name: "moxy",
         url: "/assets/stickers/moxy.webp",
     },
+    {
+        name: "smorty",
+        url: "/assets/stickers/smorty.webp",
+    },
+    {
+        name: "rory",
+        url: "/assets/stickers/rory.webp",
+    },
 ]
