@@ -4,13 +4,14 @@ import { Button } from './button';
 
 interface SearchBarProps {
   onSubmit: ({ value }: { value: string }) => void;
+  tags?: { displayName: string; value: string }[];
 }
 
-export const SearchBar = ({ onSubmit }: SearchBarProps) => {
+export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
   const [value, setValue] = React.useState('');
 
   const onSubmitSearchBar = () => {
-    if (value) onSubmit({ value });
+    if (value) onSubmit({ value, ...(tags && { tags }) });
   };
 
   return (
