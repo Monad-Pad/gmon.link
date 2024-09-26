@@ -9,10 +9,23 @@ interface SearchBarProps {
 }
 
 export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
+  if (tags?.length && new Set(tags).size !== tags.length) {
+    throw new TypeError('Duplicate tags are not allowed');
+  }
+
   const [value, setValue] = React.useState('');
+  const [selectedTags, setSelectedTags] = React.useState<string[]>();
 
   const onSubmitSearchBar = () => {
-    onSubmit({ value, ...(tags && { tags }) });
+    onSubmit({ value, ...(selectedTags?.length && { tags: selectedTags }) });
+  };
+
+  const createOnChangeCheckbox = (tag: string) => () => {
+    if (selectedTags?.includes(tag)) {
+      setSelectedTags(selectedTags.filter((t) => t !== tag));
+    } else {
+      setSelectedTags([...(selectedTags || []), tag]);
+    }
   };
 
   return (
@@ -39,7 +52,12 @@ export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
         <div className="flex justify-center ">
           <div className="flex flex-wrap justify-center gap-4 max-w-80">
             {tags.map((tag) => (
-              <Checkbox key={`project-tag-${tag}`} label={tag} />
+              <Checkbox
+                checked={selectedTags?.includes(tag)}
+                key={`project-tag-${tag}`}
+                label={tag}
+                onCheckedChange={createOnChangeCheckbox(tag)}
+              />
             ))}
           </div>
         </div>

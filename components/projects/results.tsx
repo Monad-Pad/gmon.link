@@ -4,7 +4,7 @@ import { ProjectsGrid } from './projects-grid';
 import { getProjectsByQuery } from '../../lib/project/get-projects';
 import { ProjectType } from '../../lib/types/projects';
 
-export default function Results({ query, tags }: { query: string; tags?: string[] }) {
+export default function Results({ query, selectedTags }: { query: string; selectedTags?: string[] }) {
   const [projects, setProjects] = useState<VerifiedProject[] | ProjectType[]>([]);
   const hasInited = useRef(false);
 
@@ -23,7 +23,8 @@ export default function Results({ query, tags }: { query: string; tags?: string[
       setProjects(queryResults || []);
     }
     if (hasInited.current) fetchQueryResults();
-  }, [query, tags]);
+    if (selectedTags?.length) console.log('selectedTags', selectedTags);
+  }, [query, selectedTags]);
 
   return <ProjectsGrid projects={projects} />;
 }

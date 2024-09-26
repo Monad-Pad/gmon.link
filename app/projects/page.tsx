@@ -21,7 +21,7 @@ export default function ProjectsPage() {
               tags={['dex', 'launchpad', 'personality']}
             />
           </div>
-          <Results query={query} tags={tags} />
+          <Results query={query} selectedTags={tags} />
         </div>
       </section>
     </main>
