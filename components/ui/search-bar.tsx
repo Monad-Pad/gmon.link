@@ -2,9 +2,11 @@
 import React from 'react';
 import { Button } from './button';
 
+export type SearchTag = { displayName: string; value: string };
+
 interface SearchBarProps {
-  onSubmit: ({ value }: { value: string }) => void;
-  tags?: { displayName: string; value: string }[];
+  onSubmit: ({ value, tags }: { value: string; tags?: SearchTag[] }) => void;
+  tags?: SearchTag[];
 }
 
 export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
