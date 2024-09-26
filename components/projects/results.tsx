@@ -5,7 +5,7 @@ import { getProjectsByQuery } from "../../lib/project/get-projects";
 import { ProjectType } from "../../lib/types/projects";
 
 export default function Results({ query, selectedTags }: { query: string; selectedTags?: string[] }) {
-  const [projects, setProjects] = useState<VerifiedProject[] | ProjectType[]>([]);
+  const [projects, setProjects] = useState<VerifiedProject[]>([]);
   const hasInited = useRef(false);
 
   useEffect(() => {

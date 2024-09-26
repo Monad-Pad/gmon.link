@@ -8,7 +8,7 @@ import { CheckCircle } from "lucide-react";
 
 export const ProjectsGrid = ({ projects }: { projects: VerifiedProject[] }) => {
   return (
-    <Suspense fallback={<ShowcaseSkeletonGrid />}>
+    <Suspense fallback={<ProjectsSkeletonGrid />}>
       {projects?.length ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
@@ -40,7 +40,7 @@ export const ProjectsGrid = ({ projects }: { projects: VerifiedProject[] }) => {
   );
 };
 
-function ShowcaseSkeletonItem() {
+function ProjectsSkeletonItem() {
   return (
     <div className="flex flex-col gap-2">
       <Skeleton className="w-full h-40 rounded-xl" />
@@ -49,14 +49,14 @@ function ShowcaseSkeletonItem() {
   );
 }
 
-function ShowcaseSkeletonGrid() {
+function ProjectsSkeletonGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <ShowcaseSkeletonItem />
-      <ShowcaseSkeletonItem />
-      <ShowcaseSkeletonItem />
-      <ShowcaseSkeletonItem />
-      <ShowcaseSkeletonItem />
+      <ProjectsSkeletonItem />
+      <ProjectsSkeletonItem />
+      <ProjectsSkeletonItem />
+      <ProjectsSkeletonItem />
+      <ProjectsSkeletonItem />
     </div>
   );
 }

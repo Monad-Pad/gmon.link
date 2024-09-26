@@ -1,5 +1,5 @@
-import { supabase, supabaseApiClient } from "../clients/supabase";
-import { ProjectType } from "../types/projects";
+import { supabase } from "../clients/supabase";
+import { VerifiedProject } from "./get-verified-projects";
 
 export async function getProjectsByQuery(query: string) {
   const { data, error } = await supabase
@@ -13,5 +13,5 @@ export async function getProjectsByQuery(query: string) {
     throw new Error(error.message);
   }
 
-  return data as ProjectType[];
+  return data as VerifiedProject[];
 }

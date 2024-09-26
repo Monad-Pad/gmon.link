@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Results from "../../components/projects/results";
 import { SearchBar } from "../../components/ui/search-bar";
+import { searchTags } from "../../lib/project/search-tags";
 
 export default function ProjectsPage() {
   const [query, setQuery] = useState("");
@@ -18,7 +19,7 @@ export default function ProjectsPage() {
                 setQuery(value);
                 setTags(tags);
               }}
-              tags={["dex", "launchpad", "personality"]}
+              tags={searchTags}
             />
           </div>
           <Results query={query} selectedTags={tags} />
