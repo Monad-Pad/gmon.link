@@ -12,6 +12,7 @@ export type ProjectType = {
     is_verified: boolean;
     created_at: string;
     description: string;
+    welcome_emoji: string;
     buttons: ButtonType[] | [];
     links: LinkType[] | [] | null;
 }

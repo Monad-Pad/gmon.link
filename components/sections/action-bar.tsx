@@ -3,7 +3,7 @@ import { ModeToggle } from "../ui/theme-switcher";
 import Link from "next/link";
 import { Button, buttonVariants } from "../ui/button";
 import { House, Plus, QrCode } from "lucide-react";
-import QrCodePopover from "../ui/qr-code-popover";
+import QrCodePopover from "../toolbar/qr-code-popover";
 import { ProjectType } from "@/lib/types/projects";
 
 export default function ActionBar({ project }: { project: ProjectType }) {

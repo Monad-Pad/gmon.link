@@ -2,7 +2,7 @@
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Download, Loader, QrCode } from "lucide-react";
-import { Button } from "./button";
+import { Button } from "../ui/button";
 import generateQRCode, { QRCodeOptions } from "@/lib/utils/qr-code-generator";
 import QRCodeStyling, { cornerDotTypes, DotType, CornerSquareType, CornerDotType } from "qr-code-styling";
 import { useEffect, useRef, useState } from "react";
