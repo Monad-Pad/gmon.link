@@ -1,10 +1,10 @@
-'use client';
-import { useState } from 'react';
-import Results from '../../components/projects/results';
-import { SearchBar } from '../../components/ui/search-bar';
+"use client";
+import { useState } from "react";
+import Results from "../../components/projects/results";
+import { SearchBar } from "../../components/ui/search-bar";
 
 export default function ProjectsPage() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [tags, setTags] = useState<string[]>();
 
   return (
@@ -18,7 +18,7 @@ export default function ProjectsPage() {
                 setQuery(value);
                 setTags(tags);
               }}
-              tags={['dex', 'launchpad', 'personality']}
+              tags={["dex", "launchpad", "personality"]}
             />
           </div>
           <Results query={query} selectedTags={tags} />

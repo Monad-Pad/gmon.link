@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { getVerifiedProjects, VerifiedProject } from '@/lib/project/get-verified-projects';
-import { useEffect, useState } from 'react';
-import { ProjectsGrid } from '../../projects/projects-grid';
+import { getVerifiedProjects, VerifiedProject } from "@/lib/project/get-verified-projects";
+import { useEffect, useState } from "react";
+import { ProjectsGrid } from "../../projects/projects-grid";
 
 export default function ShowcaseGrid() {
   const [showcase, setShowcase] = useState<VerifiedProject[]>([]);

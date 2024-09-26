@@ -1,8 +1,8 @@
-import { getVerifiedProjects, VerifiedProject } from '@/lib/project/get-verified-projects';
-import { useEffect, useRef, useState } from 'react';
-import { ProjectsGrid } from './projects-grid';
-import { getProjectsByQuery } from '../../lib/project/get-projects';
-import { ProjectType } from '../../lib/types/projects';
+import { getVerifiedProjects, VerifiedProject } from "@/lib/project/get-verified-projects";
+import { useEffect, useRef, useState } from "react";
+import { ProjectsGrid } from "./projects-grid";
+import { getProjectsByQuery } from "../../lib/project/get-projects";
+import { ProjectType } from "../../lib/types/projects";
 
 export default function Results({ query, selectedTags }: { query: string; selectedTags?: string[] }) {
   const [projects, setProjects] = useState<VerifiedProject[] | ProjectType[]>([]);
@@ -23,7 +23,7 @@ export default function Results({ query, selectedTags }: { query: string; select
       setProjects(queryResults || []);
     }
     if (hasInited.current) fetchQueryResults();
-    if (selectedTags?.length) console.log('selectedTags', selectedTags);
+    if (selectedTags?.length) console.log("selectedTags", selectedTags);
   }, [query, selectedTags]);
 
   return <ProjectsGrid projects={projects} />;

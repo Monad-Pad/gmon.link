@@ -1,7 +1,7 @@
-'use client';
-import React from 'react';
-import { Button } from './button';
-import { Checkbox } from './checkbox';
+"use client";
+import React from "react";
+import { Button } from "./button";
+import { Checkbox } from "./checkbox";
 
 interface SearchBarProps {
   onSubmit: ({ value, tags }: { value: string; tags?: string[] }) => void;
@@ -10,10 +10,10 @@ interface SearchBarProps {
 
 export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
   if (tags?.length && new Set(tags).size !== tags.length) {
-    throw new TypeError('Duplicate tags are not allowed');
+    throw new TypeError("Duplicate tags are not allowed");
   }
 
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState("");
   const [selectedTags, setSelectedTags] = React.useState<string[]>();
 
   const onSubmitSearchBar = () => {
@@ -36,7 +36,7 @@ export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
             setValue(e.target.value);
           }}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
+            if (e.key === "Enter") {
               onSubmitSearchBar();
             }
           }}

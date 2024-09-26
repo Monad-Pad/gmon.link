@@ -1,10 +1,10 @@
-import React, { Suspense } from 'react';
-import { Skeleton } from '../ui/skeleton';
-import { VerifiedProject } from '../../lib/project/get-verified-projects';
-import Link from 'next/link';
-import ProfileImage from '../ui/profile-image';
-import { IMAGE_BASE_URL } from '../../lib/utils';
-import { CheckCircle } from 'lucide-react';
+import React, { Suspense } from "react";
+import { Skeleton } from "../ui/skeleton";
+import { VerifiedProject } from "../../lib/project/get-verified-projects";
+import Link from "next/link";
+import ProfileImage from "../ui/profile-image";
+import { IMAGE_BASE_URL } from "../../lib/utils";
+import { CheckCircle } from "lucide-react";
 
 export const ProjectsGrid = ({ projects }: { projects: VerifiedProject[] }) => {
   return (
