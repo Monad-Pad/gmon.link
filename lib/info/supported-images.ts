@@ -24,4 +24,8 @@ export const supportedImages: SupportedImage[] = [
         name: "moyaki",
         url: "/assets/stickers/moyaki.webp",
     },
+    {
+        name: "moxy",
+        url: "/assets/stickers/moxy.webp",
+    },
 ]
