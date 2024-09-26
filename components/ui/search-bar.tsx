@@ -12,7 +12,7 @@ export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
   const [value, setValue] = React.useState('');
 
   const onSubmitSearchBar = () => {
-    if (value) onSubmit({ value, ...(tags && { tags }) });
+    onSubmit({ value, ...(tags && { tags }) });
   };
 
   return (

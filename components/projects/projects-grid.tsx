@@ -9,9 +9,9 @@ import { CheckCircle } from 'lucide-react';
 export const ProjectsGrid = ({ projects }: { projects: VerifiedProject[] }) => {
   return (
     <Suspense fallback={<ShowcaseSkeletonGrid />}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {projects &&
-          projects.map((project, idx) => (
+      {projects?.length ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {projects.map((project, idx) => (
             <Link
               key={idx}
               href={`/${project.slug}`}
@@ -32,7 +32,10 @@ export const ProjectsGrid = ({ projects }: { projects: VerifiedProject[] }) => {
               </div>
             </Link>
           ))}
-      </div>
+        </div>
+      ) : (
+        <p className="text-lg sm:text-xl text-muted-foreground text-center">No projects found...</p>
+      )}
     </Suspense>
   );
 };

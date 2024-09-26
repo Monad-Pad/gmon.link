@@ -11,7 +11,7 @@ export default function Results({ query, tags }: { query: string; tags?: string[
   useEffect(() => {
     async function fetchDefaultProjects() {
       const defaultProjects = await getVerifiedProjects();
-      setProjects(defaultProjects || []);
+      if (!hasInited.current) setProjects(defaultProjects || []);
       hasInited.current = true;
     }
     fetchDefaultProjects();
@@ -22,12 +22,7 @@ export default function Results({ query, tags }: { query: string; tags?: string[
       const queryResults = await getProjectsByQuery(query);
       setProjects(queryResults || []);
     }
-    if (hasInited) fetchQueryResults();
-  }, [query, tags]);
-
-  useEffect(() => {
-    console.log('tags', tags);
-    console.log('query', query);
+    if (hasInited.current) fetchQueryResults();
   }, [query, tags]);
 
   return <ProjectsGrid projects={projects} />;
