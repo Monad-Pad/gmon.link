@@ -1,11 +1,11 @@
 'use client';
 import { useState } from 'react';
 import Results from '../../components/projects/results';
-import { SearchBar, SearchTag } from '../../components/ui/search-bar';
+import { SearchBar } from '../../components/ui/search-bar';
 
 export default function ProjectsPage() {
   const [value, setValue] = useState('');
-  const [tags, setTags] = useState<SearchTag[]>();
+  const [tags, setTags] = useState<string[]>();
 
   return (
     <main className="bg-background">
@@ -18,6 +18,7 @@ export default function ProjectsPage() {
                 setValue(value);
                 setTags(tags);
               }}
+              tags={['dex', 'launchpad', 'personality']}
             />
           </div>
           <Results value={value} tags={tags} />

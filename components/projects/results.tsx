@@ -3,9 +3,8 @@
 import { getVerifiedProjects, VerifiedProject } from '@/lib/project/get-verified-projects';
 import { useEffect, useState } from 'react';
 import { ProjectsGrid } from './projects-grid';
-import { SearchTag } from '../ui/search-bar';
 
-export default function Results({ value, tags }: { value: string; tags?: SearchTag[] }) {
+export default function Results({ value, tags }: { value: string; tags?: string[] }) {
   const [projects, setProjects] = useState<VerifiedProject[]>([]);
 
   useEffect(() => {

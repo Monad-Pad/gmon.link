@@ -3,11 +3,9 @@ import React from 'react';
 import { Button } from './button';
 import { Checkbox } from './checkbox';
 
-export type SearchTag = { displayName: string; value: string };
-
 interface SearchBarProps {
-  onSubmit: ({ value, tags }: { value: string; tags?: SearchTag[] }) => void;
-  tags?: SearchTag[];
+  onSubmit: ({ value, tags }: { value: string; tags?: string[] }) => void;
+  tags?: string[];
 }
 
 export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
@@ -37,7 +35,15 @@ export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
           Search
         </Button>
       </div>
-      <Checkbox label={'example'} />
+      {tags?.length && (
+        <div className="flex justify-center ">
+          <div className="flex flex-wrap justify-center gap-4 max-w-80">
+            {tags.map((tag) => (
+              <Checkbox key={`project-tag-${tag}`} label={tag} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
