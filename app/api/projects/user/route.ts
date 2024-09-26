@@ -18,7 +18,7 @@ export async function GET() {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 
-    const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_SERVICE_KEY!, { db: { schema: "gmonlink" } });
+    const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_KEY!, { db: { schema: "gmonlink" } });
 
     const { data, error } = await supabase.from("projects").select("*, links(*)").eq("user_id", token.userId).order("order", { referencedTable: "links", ascending: false });
 

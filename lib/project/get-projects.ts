@@ -1,3 +1,4 @@
+"use server";
 import { supabase } from "../clients/supabase";
 import { VerifiedProject } from "./get-verified-projects";
 
