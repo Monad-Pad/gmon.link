@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { ModeToggle } from "../ui/theme-switcher";
 import Link from "next/link";
-import { Button, buttonVariants } from "../ui/button";
-import { House, Plus, QrCode } from "lucide-react";
+import { buttonVariants } from "../ui/button";
+import { House, Plus } from "lucide-react";
 import QrCodePopover from "../toolbar/qr-code-popover";
 import { ProjectType } from "@/lib/types/projects";
+import AnalyticsPopover from "../toolbar/analytics-popover";
+import { ModeToggle } from "../ui/theme-switcher";
 
 export default function ActionBar({ project }: { project: ProjectType }) {
 	return (
@@ -17,6 +17,7 @@ export default function ActionBar({ project }: { project: ProjectType }) {
 						</div>
 					</Link>
 					<QrCodePopover project={project} />
+					<AnalyticsPopover title={project.title} slug={project.slug} />
 					<ModeToggle />
                     <Link target="_blank" href={"https://t.me/gmonlinkbot?start"} className="flex items-center gap-2">
 						<div className={buttonVariants({ variant: "outline", size: "icon" })}>
