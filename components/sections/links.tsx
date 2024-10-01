@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight, Plus, Settings, User } from "lucide-react";
 import { Icons } from "@/lib/types/icons";
 import { getCategories } from "@/lib/project/get-categories";
+import LinkIcon from "./link-icon";
 
 interface LinksSectionProps {
 	links: LinkType[] | [] | null;
@@ -33,8 +34,6 @@ export function LinksSection({ links }: LinksSectionProps) {
 								</h2>
 								<div className="flex flex-col gap-2">
 									{categoryLinks.map((link, idx) => {
-										const IconComponent = link.icon ? Icons[link.icon.icon] : null;
-
 										return (
 											<Link
 												key={idx}
@@ -47,19 +46,10 @@ export function LinksSection({ links }: LinksSectionProps) {
 														: "bg-card hover:bg-muted"
 												} ${link.description ? "" : "items-center"}`}
 											>
-												{IconComponent && (
-													<div
-														className={`size-10 flex items-center justify-center ${
-															link.icon?.featured
-																? "rounded-full shadow bg-primary text-primary-foreground"
-																: idx === 0
-																? "text-primary-foreground"
-																: "text-primary"
-														}`}
-													>
-														<IconComponent size={24} />
-													</div>
-												)}
+												<div className='flex items-center justify-center'>
+													<LinkIcon url={link.url} size="36" />
+												</div>
+
 												<div className="space-y-1 pr-6">
 													<h3 className={`text-lg font-semibold ${idx === 0 ? "text-primary-foreground" : "text-foreground"}`}>
 														{link.title}
