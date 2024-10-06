@@ -5,6 +5,8 @@ A linktree/linkinbio alternative that is powered by Telegram. It is written in N
 ## Help build gmon.link
 gmon.link is a community-run project initially started by the team behind Monad Pad. If you have any suggestions, ideas, or want to help build and show your skills to the Monad ecosystem, please open an issue or a pull request 💜
 
+View the Telegram bot's Github Repository [here](https://github.com/Monad-Pad/gmonlink-bot/).
+
 # Setting it up locally
 To setup the front-end of gmon.link locally to for example; help contribute to the platform or play around with it. You need to follow the following steps:
 
