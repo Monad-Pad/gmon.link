@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
         pageviews: item.pageviews
     }));
 
-    console.log(formattedData);
+    // console.log(formattedData);
 
     return NextResponse.json(formattedData);
 }

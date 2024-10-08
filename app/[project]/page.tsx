@@ -44,7 +44,9 @@ export default async function ProjectPage({ params }: { params: { project: strin
 				buttons={project.buttons}
 			/>
 			<LinksSection links={links} />
-			{/* <MadeWithSection /> */}
+			<div className="md:pb-20 lg:pb-16 pb-16">
+				<MadeWithSection isProjectPage />
+			</div>
 			<ActionBar project={project} />
 			{project.welcome_emoji && (
 				<FallingImages
