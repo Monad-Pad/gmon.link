@@ -8,10 +8,10 @@ import { CheckCircle } from "lucide-react";
 
 interface ProjectsGridProps {
   projects: VerifiedProject[];
-  hasInited: boolean;
+  isLoading?: boolean;
 }
 
-export const ProjectsGrid = ({ projects, hasInited }: ProjectsGridProps) => {
+export const ProjectsGrid = ({ projects, isLoading }: ProjectsGridProps) => {
   return (
     <Suspense fallback={<ProjectsSkeletonGrid />}>
       {projects?.length ? (
@@ -40,7 +40,7 @@ export const ProjectsGrid = ({ projects, hasInited }: ProjectsGridProps) => {
         </div>
       ) : (
         <p className="text-lg sm:text-xl text-muted-foreground text-center">
-          {hasInited ? "No projects found..." : "Loading..."}
+          {isLoading ? "Loading..." : "No projects found..."}
         </p>
       )}
     </Suspense>

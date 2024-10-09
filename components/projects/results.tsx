@@ -11,14 +11,15 @@ export default function Results({ query, selectedTags }: { query: string; select
   const [projects, setProjects] = useState<VerifiedProject[]>([]);
   const hasInited = useRef(false);
   const [pageNumber, setPageNumber] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   const previousPageNumber = useRef(pageNumber);
   const [resultsTotal, setResultsTotal] = useState(0);
   const previousCombinedInputStr = useRef<string>();
 
   const combineInputsAsString = (query: string, tags: string[]) => query + (tags || []).join(",");
 
+  // handle default data
   useEffect(() => {
-    // get default data
     async function fetchDefaultProjects() {
       const { data: defaultProjects, count: initialCount } = await getProjectsByQuery({ limit: pageSize });
       if (!hasInited.current) setProjects(defaultProjects || []);
@@ -27,13 +28,16 @@ export default function Results({ query, selectedTags }: { query: string; select
       if (initialCount) {
         setResultsTotal(initialCount);
       }
+      setIsLoading(false);
     }
     fetchDefaultProjects();
   }, []);
 
+  // handle new data
   useEffect(() => {
     if (!hasInited.current) return;
 
+    setIsLoading(true);
     let pageNum = pageNumber;
 
     // reset results and pageNumber when new query or tags are selected (isFresh)
@@ -63,9 +67,10 @@ export default function Results({ query, selectedTags }: { query: string; select
       if (newCount) {
         setResultsTotal(newCount);
       }
+      setIsLoading(false);
     }
 
-    // ensure it does not fetch the same data append it to the result
+    // ensure it does not fetch the same data more than once
     const hasSameInput =
       previousCombinedInputStr.current === combinedInputString && pageNum === previousPageNumber.current;
     if (!hasSameInput) {
@@ -80,7 +85,7 @@ export default function Results({ query, selectedTags }: { query: string; select
 
   return (
     <div className="flex flex-col align-center">
-      <ProjectsGrid projects={projects} hasInited={hasInited.current} />
+      <ProjectsGrid projects={projects} isLoading={isLoading} />
       {!!(projects?.length && hasInited.current && resultsTotal > (pageNumber + 1) * pageSize) && (
         <div className="flex justify-center">
           <Button
