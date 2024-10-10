@@ -6,7 +6,12 @@ import ProfileImage from "../ui/profile-image";
 import { IMAGE_BASE_URL } from "../../lib/utils";
 import { CheckCircle } from "lucide-react";
 
-export const ProjectsGrid = ({ projects }: { projects: VerifiedProject[] }) => {
+interface ProjectsGridProps {
+  projects: VerifiedProject[];
+  isLoading?: boolean;
+}
+
+export const ProjectsGrid = ({ projects, isLoading }: ProjectsGridProps) => {
   return (
     <Suspense fallback={<ProjectsSkeletonGrid />}>
       {projects?.length ? (
@@ -34,7 +39,9 @@ export const ProjectsGrid = ({ projects }: { projects: VerifiedProject[] }) => {
           ))}
         </div>
       ) : (
-        <p className="text-lg sm:text-xl text-muted-foreground text-center">No projects found...</p>
+        <p className="text-lg sm:text-xl text-muted-foreground text-center">
+          {isLoading ? "Loading..." : "No projects found..."}
+        </p>
       )}
     </Suspense>
   );
