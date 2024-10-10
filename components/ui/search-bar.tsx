@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "./button";
 import { Checkbox } from "./checkbox";
+import { Input } from "./input";
 
 interface SearchBarProps {
   onSubmit: ({ value, tags }: { value: string; tags?: string[] }) => void;
@@ -31,7 +32,7 @@ export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
   return (
     <div className="flex flex-col align-center gap-3">
       <div className="flex justify-center gap-1">
-        <input
+        <Input
           onChange={(e) => {
             setValue(e.target.value);
           }}
@@ -41,14 +42,14 @@ export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
             }
           }}
           type="text"
-          placeholder="Search for projects..."
-          className="border shadow border-muted-foreground/30 px-2 py-1 rounded-md bg-card transition-colors hover:bg-muted hover:border-muted-foreground/90"
+          placeholder="Search gmon.link..."
+          className="max-w-md"
         />
         <Button onClick={onSubmitSearchBar} variant="default" size="default">
           Search
         </Button>
       </div>
-      {tags?.length && (
+      {/* {tags?.length && (
         <div className="flex justify-center ">
           <div className="flex flex-wrap justify-center gap-4 max-w-80">
             {tags.map((tag) => (
@@ -61,7 +62,7 @@ export const SearchBar = ({ onSubmit, tags }: SearchBarProps) => {
             ))}
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

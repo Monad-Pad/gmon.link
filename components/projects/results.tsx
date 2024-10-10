@@ -91,8 +91,8 @@ export default function Results({ query, selectedTags }: { query: string; select
           <Button
             onClick={() => setPageNumber((prev) => prev + 1)}
             size="default"
-            variant="outline"
-            className="border-primary border-2 mt-10"
+            variant="default"
+            className="mt-10"
           >
             Load More
           </Button>

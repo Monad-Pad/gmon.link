@@ -30,11 +30,11 @@ export default function HeroSection({ contributors }: { contributors: Contributo
 								<Link href="https://t.me/gmonlinkbot" target="_blank" className={buttonVariants({ variant: "default", size: "lg" })}>
 									<LinkIcon className="w-4 h-4 mr-2" /> Claim your link
 								</Link>
-								<Link href="https://gmon.link/monad-pad" target="_blank" className={buttonVariants({ variant: "outline", size: "lg" })}>
-									View example <ArrowRightIcon className="w-4 h-4 ml-2" />
+								<Link href="/projects" className={buttonVariants({ variant: "outline", size: "lg" })}>
+									View all projects <ArrowRightIcon className="w-4 h-4 ml-2" />
 								</Link>
 							</div>
-							<div className="mt-2 flex items-center justify-center gap-1">
+							<div className="mt-2 flex flex-wrap items-center justify-start gap-x-1">
 							<p className="text-sm text-muted-foreground">
 								*Completely free to use, built by{" "}
 							</p>

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import ShowcaseGrid from "./showcase-grid";
+import { ArrowRightIcon } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function ShowcaseSection() {
 	return (
@@ -16,10 +18,15 @@ export default function ShowcaseSection() {
 						>
 							Claim your gmon.link
 						</Link>
-                        .
+						.
 					</p>
 				</div>
 				<ShowcaseGrid />
+				<div className="flex mt-6 justify-center">
+					<Link href="/projects" className={buttonVariants({ variant: "default", size: "default" })}>
+						View all projects <ArrowRightIcon className="w-4 h-4 ml-2" />
+				</Link>
+				</div>
 			</div>
 		</section>
 	);
