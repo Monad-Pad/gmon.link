@@ -39,8 +39,8 @@ export default function HeroSection({ contributors }: { contributors: Contributo
 								*Completely free to use, built by{" "}
 							</p>
 							<div className="flex -space-x-1.5">
-							<Link href="https://monadpad.xyz" target="_blank" className="">
-									<Image src="/assets/monadpad-logo.png" alt="monadpad-logo" width={20} height={20} className="rounded-full border" />
+							<Link href="https://alloca.xyz" target="_blank" className="">
+									<Image src="/assets/alloca-logo.png" alt="alloca-logo" width={20} height={20} className="rounded-full border" />
 								</Link>
 								<ContributorCycle contributors={contributors} size={20} />
 							</div>
